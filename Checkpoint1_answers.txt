@@ -1,0 +1,96 @@
+Exercises
+
+1) What data types do each of these values represent?
+
+  1. "A Clockwork Orange" == String data type
+  2. 42 == Integer data tyoe
+  3. 09/02/1945 == Date data type
+  4. 98.7 == Float data type
+  5. $15.99 == Float data type
+
+2) Explain when a database would be used. Explain when a text file would be used.
+
+    - A database would be used when you want to allow users to make changes to data 
+      and you would like their data to be saved even when the program ends. Also,
+      you will need a database if the data will be accessed by two or more applications
+      at a time so they can simultaneously maniplute data.
+      A text file would be used when the data would need to be read by humans and if
+      only 1 application will be manipulating the data at a time.
+
+3) Describe one difference between SQL and other programming languages.
+
+    - SQL is different from other programming language because it's a declarative 
+      language and not a procedural language.  This allows programmers to 'tell' 
+      the database what information/data they want and the database will retrieve the
+      data on its own.  Programmers do not have to tell the database how to serch for
+      the data.
+
+4) In your own words, explain how the pieces of a database system fit together at 
+   a high level.
+
+    - Databases are used to allow users to add, delete or update data through an 
+      interface. The user can use any of the following data types: strings, integers,
+      dates, objects or floats for their data. The database then stores the data in 
+      a binary file format which will make it easy to find, change and return desired data. 
+      When desired, data can be retrieved from the database using SQL (Structured Query Language).
+
+5) Explain the meaning of table, row, column, and value.
+
+    - A table is a data structure that uses columns and rows to organize data.
+      A column is an element of a table data structure that is used to assign meaning 
+      to data to be stored in the row cells.
+      A row is an element of a table data structure that contains cells that are
+      arranged horizontally. Rows are used to fill in data relating to the column.
+      A value is data that is entered into a cell of a table data structure.
+
+6) List three data types that can be used in a table.
+
+     Three data types that can be used in a table are: 
+     1. Strings
+     2. Dates
+     3. Integers
+
+7)  
+    1. SELECT date, amount
+       FROM payments;
+        - "I would like to see the date and amount of all the payments."
+
+    2. SELECT amount
+       FROM payments
+       WHERE amount > 500;
+        - "I would like to see the amount of all the payments that were more than 
+           500."
+       
+    3. SELECT *
+       FROM payments
+       WHERE payee = 'Mega Foods';
+       - "I would like to see the date, payee, amount and memo of the payment made to
+          the payee equal to Mego Foods."
+
+8)  
+    1. The email and sign-up date for the user named DeAndre Data:
+       
+         SELECT email, signup 
+         FROM  users
+         WHERE name = "DeAndre Data";
+        
+        OUTPUT:         email             signup
+                   datad@comcast.net    2008-01-20
+
+    2. The user ID for the user with email 'aleesia.algorithm@uw.edu':
+        
+         SELECT userid
+         FROM  users
+         WHERE email = 'aleesia.algorithm@uw.edu' 
+
+        OUTPUT:     userid
+                      1
+
+    3. All the columns for the user ID equal to 4:
+       
+         SELECT *
+         FROM  users
+         WHERE userid = 4
+
+        OUTPUT:  userid       name              email            signup
+                   4     Brandy Boolean	   bboolean@nasa.gov   1999-10-15
