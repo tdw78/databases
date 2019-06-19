@@ -40,7 +40,9 @@ Exercises
 
 4) Define aliasing.
 
-      - Aliasing in abbreviating table names in JOIN clauses.
+      - Aliasing is assigning a new temporary name to a database column in order 
+        to hide the real column name or to make readability easier.
+        Abbreviating the table names in JOIN clauses is one examle.
 
 5) Change this query so that you are using aliasing:
 
@@ -61,11 +63,9 @@ Exercises
 
      A) List all employees and all shifts.
 
-            SELECT name
-            FROM employees
-            UNION
-            SELECT date, start_time, end_time
-            FROM shifts;
+         SELECT employees.name, shifts.date, shifts.start_time, shifts.end_time
+         FROM employees
+         FULL JOIN shifts;
 
 8) Using this Adoption schema and data, please write queries to retrieve the 
    following information and include the results:
@@ -163,11 +163,14 @@ Exercises
 
         SELECT patrons.name, books.title
         FROM transactions
-        JOIN patrons ON transactions.patrons_id = patrons.id
+        RIGHT OUTER JOIN patrons ON transactions.patron_id = patrons.id
         JOIN books ON transactions.isbn = books.isbn
-        WHERE transactions.checked_in_date LIKE 'NULL';
+        WHERE transactions.checked_in_date <> 'NULL';
         
-              name                         title
-           Terry Boot              Advanced Potion-Making 
-         Cedric Diggory    Fantastic Beasts and Where to Find Them  
+              name                            title
+          Hermione Granger               Hogwarts: A History
+             Cho Chang                Advanced Potion-Making
+             Terry Boot      Fantastic Beasts and Where to Find Them
+             Padma Pati      Fantastic Beasts and Where to Find Them
+         Hermione Granger    Fantastic Beasts and Where to Find Them
 
