@@ -165,12 +165,9 @@ Exercises
         FROM transactions
         RIGHT OUTER JOIN patrons ON transactions.patron_id = patrons.id
         JOIN books ON transactions.isbn = books.isbn
-        WHERE transactions.checked_in_date <> 'NULL';
+        WHERE transactions.checked_in_date = NULL;
         
               name                            title
-          Hermione Granger               Hogwarts: A History
-             Cho Chang                Advanced Potion-Making
-             Terry Boot      Fantastic Beasts and Where to Find Them
-             Padma Pati      Fantastic Beasts and Where to Find Them
-         Hermione Granger    Fantastic Beasts and Where to Find Them
+           Terry Boot                 Advanced Potion-Making
+         Cedric Diggory        Fantastic Beasts and Where to Find Them
 
