@@ -165,7 +165,7 @@ Exercises
         FROM transactions
         RIGHT OUTER JOIN patrons ON transactions.patron_id = patrons.id
         JOIN books ON transactions.isbn = books.isbn
-        WHERE transactions.checked_in_date = NULL;
+        WHERE transactions.checked_in_date IS NULL;
         
               name                            title
            Terry Boot                 Advanced Potion-Making
